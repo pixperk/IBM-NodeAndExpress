@@ -97,7 +97,7 @@ regd_users.route("/auth/review/:isbn")
     }
 
     // Clear all reviews for the book
-    books[isbn].reviews = {};
+    books[isbn].reviews[username] = "";
 
     // Update the books database file
     fs.writeFileSync(path.join(__dirname, 'booksdb.json'), JSON.stringify(books, null, 2));

@@ -14,7 +14,9 @@
   "3": {
     "author": "Dante Alighieri",
     "title": "The Divine Comedy",
-    "reviews": {}
+    "reviews": {
+      "happyUser": "Nice"
+    }
   },
   "4": {
     "author": "Unknown",
