@@ -1,6 +1,6 @@
 const express = require("express");
 const fs = require("fs");
-let books = require("./booksdb.js");
+let books = require("./booksdb.json");
 const path = require("path");
 let isValid = require("./auth_users.js").isValid;
 const public_users = express.Router();
