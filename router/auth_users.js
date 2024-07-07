@@ -96,8 +96,12 @@ regd_users.route("/auth/review/:isbn")
       return res.status(404).json({ message: "Book not found." });
     }
 
-    // Clear all reviews for the book
-    books[isbn].reviews[username] = "";
+    // Clear all reviews for the book related to that user
+    if(books[isbn].reviews[username])
+    delete books[isbn].reviews[username];
+  else{
+    return res.status(404).json({ message: `Username ${username} does not have any review for this book`});
+  }
 
     // Update the books database file
     fs.writeFileSync(path.join(__dirname, 'booksdb.json'), JSON.stringify(books, null, 2));
